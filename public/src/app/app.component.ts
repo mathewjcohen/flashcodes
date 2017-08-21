@@ -7,11 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  aboutVisible = false;
-  lang = 'js';
-
-  switchLang(lang){
-    this.lang = lang;
-  }
+  
 
 }

@@ -6,19 +6,19 @@ module.exports = function(app){
         Question.getJS(req, res);
     })
     app.get('/getTS', function(req, res){
-        console.log("in routes");
         Question.getTS(req, res);
     })
     app.get('/getCSharp', function(req, res){
-        console.log("in routes");
         Question.getCSharp(req, res);
     })
     app.get('/getPython', function(req, res){
-        console.log("in routes");
         Question.getPython(req, res);
     })
-    app.post('/new', function(req, res){
-        Question.addNew(req, res);
+    app.get('/allFlashCodes', function(req, res){
+        Question.allFlashCodes(req, res);
+    })
+    app.post('/addFlashCode', function(req, res){
+        Question.addFlashCode(req, res);
     })
     app.all("*", (req, res, next) => {
         res.sendFile(path.resolve("./public/dist/index.html"));

@@ -12,20 +12,28 @@ module.exports = {
                 console.log('Error getting all jsFlashCodes in event controller...');
             }
         })
+    },
+    allFlashCodes: function(req, res){
+        Question.find({}, function (err, allFlashCodes) {
+            if (allFlashCodes) {
+                res.json(allFlashCodes);
+            } else {
+                console.log('Error getting all jsFlashCodes in event controller...');
+            }
+        })
+    },
+    addFlashCode: function(req, res){
+        var question = new Question({
+            language: req.body.language,
+            question: req.body.question,
+            answer: req.body.answer,
+        })
+        question.save(function(err){
+            if(err){
+                console.log('Error saving during create');
+            }else{
+                res.json(question);
+            }
+        })
     }
-    // addNew: function(req, res){
-    //     var question = new FlashCode({
-    //         language: req.body.language,
-    //         question: req.body.question,
-    //         answer: req.body.answer,
-    //     })
-    //     question.save(function(err){
-    //         if(err){
-    //             console.log('Error saving during create');
-    //         }else{
-    //             res.json(question);
-    //         }
-    //     }).then(data => res.json(data))
-    //     .catch(err => console.log(err))
-    // }
 }

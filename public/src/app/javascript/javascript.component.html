@@ -1,6 +1,6 @@
 <h1>Javascript</h1>
 
-<div class="wrapper">
+<div class="wrapper" ontouchstart="this.classList.toggle('hover');">
   <div class="front">
     <div class="inner">
       <span>{{ currentFlashCode.question }}</span>
@@ -14,5 +14,5 @@
 </div>
 
 <div id="next_wrapper">
-  <div class="btn blue" (click)="nextFC()">Next</div>
+  <div class="btn blue" (click)="nextFC()">&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;</div>
 </div>

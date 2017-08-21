@@ -14,6 +14,7 @@ import { CSharpComponent } from './c-sharp/c-sharp.component';
 
 import { DatabaseService } from './database.service';
 import { AdminEditDeleteComponent } from './admin-edit-delete/admin-edit-delete.component';
+import { FlashcodesComponent } from './flashcodes/flashcodes.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminEditDeleteComponent } from './admin-edit-delete/admin-edit-delete.
     TypescriptComponent,
     PythonComponent,
     CSharpComponent,
-    AdminEditDeleteComponent
+    AdminEditDeleteComponent,
+    FlashcodesComponent
   ],
   imports: [
     BrowserModule,

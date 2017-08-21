@@ -5,6 +5,33 @@
     </div>
   </nav>
   <div class="container">
-
+    <h2>Add A New FlashCode</h2>
+    <form #FCForm="ngForm" class="add_flash_form" (submit)="addQSubmit()">
+      <select name="language" [(ngModel)]="flashcode.language" #language="ngModel">
+        <option value="JavaScript" selected>JavaScript</option>
+        <option value="TypeScript">TypeScript</option>
+        <option value="C#">C#</option>
+        <option value="Python">Python</option>
+      </select>
+      <input type="text" name="question" [(ngModel)]="flashcode.question" #question="ngModel" placeholder="Question">
+      <input type="text" name="answer" [(ngModel)]="flashcode.answer" #answer="ngModel" placeholder="Answer">
+      <button class="btn blue" type="submit">Submit</button>
+    </form>
   </div>
-</div>
+  <div class="container">
+    <table class="striped">
+      <thead class="blue white">
+        <td>Language</td>
+        <td>Question</td>
+        <td>Answer</td>
+        <td>Action</td>
+      </thead>
+      <tr *ngFor="let item of allFlashCodes">
+        <td width="12%">{{ item.language }}</td>
+        <td>{{ item.question }}</td>
+        <td width="50%">{{ item.answer }}</td>
+        <td width="12%" class="centered"><button class="btn faded_blue" (click)="deleteFlashCode"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+      </tr>
+    </table>
+  </div>
+</div> 
