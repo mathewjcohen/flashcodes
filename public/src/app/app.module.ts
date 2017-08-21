@@ -1,5 +1,8 @@
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
@@ -10,6 +13,7 @@ import { PythonComponent } from './python/python.component';
 import { CSharpComponent } from './c-sharp/c-sharp.component';
 
 import { DatabaseService } from './database.service';
+import { AdminEditDeleteComponent } from './admin-edit-delete/admin-edit-delete.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +21,15 @@ import { DatabaseService } from './database.service';
     JavascriptComponent,
     TypescriptComponent,
     PythonComponent,
-    CSharpComponent
+    CSharpComponent,
+    AdminEditDeleteComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent]

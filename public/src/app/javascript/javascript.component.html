@@ -1,3 +1,18 @@
-<p>
-  javascript works!
-</p>
+<h1>Javascript</h1>
+
+<div class="wrapper">
+  <div class="front">
+    <div class="inner">
+      <span>{{ currentFlashCode.question }}</span>
+    </div>
+  </div>
+  <div class="back">
+    <div class="inner">
+      <p>{{ currentFlashCode.answer }}</p>
+    </div>
+  </div>
+</div>
+
+<div id="next_wrapper">
+  <div class="btn blue" (click)="nextFC()">Next</div>
+</div>

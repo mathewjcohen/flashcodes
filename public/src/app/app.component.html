@@ -12,22 +12,24 @@
       <div class="card-content white-text">
         <span class="card-title">About FlashCodes</span>
         <p>I began this project by planning to make physical flash cards to help me learn new programing languages, paradigms,
-          and best practices, but decided that it would make more sense to implement this as a web app. So here it is.</p><br>
-        <button (click)="aboutVisible = false" class="btn blue"><i class="material-icons left">close</i>Close</button>
+          and best practices, but decided that it would make more sense to implement this as a web app. So here it is.</p>
+          <button (click)="aboutVisible = false" class="btn btn_floating faded_blue"><i class="fa fa-times" aria-hidden="true"></i></button>
       </div>
     </div>
   </div>
   <div id="lang_selection" class="container">
-    <div class="lang_btn">JavaScript</div>
-    <div class="lang_btn">TypeScript</div>
-    <div class="lang_btn">C#</div>
-    <div class="lang_btn">Python</div>
+    <div class="btn blue" (click)="switchLang('js')">JavaScript</div>
+    <div class="btn blue" (click)="switchLang('ts')">TypeScript</div>
+    <div class="btn blue" (click)="switchLang('c#')">C#</div>
+    <div class="btn blue" (click)="switchLang('py')">Python</div>
   </div>
-  <div id="lang_modules">
-    <app-javascript *ngIf="lang == 'js'"></app-javascript>
-    <app-c-sharp *ngIf="lang == 'c#'"></app-c-sharp>
-    <app-python *ngIf="lang == 'py'"></app-python>
-    <app-typescript *ngIf="lang == 'ts'"></app-typescript>
+  <div class="container">
+    <div id="lang_module_wrap">
+      <app-javascript *ngIf="lang == 'js'"></app-javascript>
+      <app-c-sharp *ngIf="lang == 'c#'"></app-c-sharp>
+      <app-python *ngIf="lang == 'py'"></app-python>
+      <app-typescript *ngIf="lang == 'ts'"></app-typescript>
+    </div>
   </div>
 
 </div>

@@ -1,17 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
-/* colors
-dark: #0A2D49
-light: #6BB8F5
-base blue: #2196f3
-base alt: 1A77C0
-faded blue: #325773
+/* colors */
+.dark_blue{
+    background:#0A2D49 !important;
+}
+.light_blue{
+    background: #6BB8F5 !important;
+}
+.blue{
+    background: #2196f3 !important;
+}
+.blue_alt{
+    background: #1A77C0 !important;
+}
+.faded_blue{
+    background: #325773 !important;
+}
 
-*/
+/* positioning */
+
+.center{
+    margin: 0 auto;
+}
+
+/* buttons */
+
+.btn{
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2%;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    color: #fff;
+    font-size: 1.5em;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14);
+}
+.btn, .btn_large {
+    text-decoration: none;
+    color: #fff;
+    background-color: #2196f3;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+.btn_floating {
+    /* display: inline-block; */
+    color: #fff;
+    position: absolute;
+    top: -20px;
+    left: 93%;
+    overflow: hidden;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    background-color: #2196f3;
+    border-radius: 50%;
+    -webkit-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    vertical-align: middle;
+    font-size: 1.25rem;
+  }
+  
+.btn_floating:hover {
+    background-color: #2196f3 !important;
+}
+  
+.btn:hover, .btn_large:hover {
+    background-color: #6BB8F5 !important;
+}
+
+/* cards */
+
+.card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background: rgba(0,0,0,.05);
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    padding: 3% 5%;
+}
+.card .card-title {
+    display: block;
+    padding-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+/* document */
+
 body{
     margin: 0;
     padding: 0;
     font-size: 14px;
     font-family: 'Robot', sans-serif;
+    color: #3a3a3a;
 }
 .container{
     margin: 0 auto;
@@ -59,41 +153,20 @@ nav .brand_logo {
     font-size: 2.1rem;
     padding: 0;
 }
+
 #about{
-    background: rgba(0,0,0,.5);
-    z-index: 10;
+    display: flex;
+    width: 40%;
+    margin-top: 2%;
 }
 #lang_selection{
     display: flex;
-    justify-content: center;
+    width: 35%;
+    justify-content: space-between;
+    margin-top: 2%;
 }
-.lang_btn{
-    padding: 1% 2%;
-    font-size: 1.25em;
-    color: #fff;
-    background: #325773;
-    margin: 2%;
-    cursor: pointer;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14)
-}
-.lang_btn:hover{
-    background: #2196f3;
-}
-#lang_modules{
-    display: none;
-}
-
-.card {
-    position: relative;
-    margin: 0.5rem 0 1rem 0;
-    background-color: #fff;
-    -webkit-transition: -webkit-box-shadow .25s;
-    transition: -webkit-box-shadow .25s;
-    transition: box-shadow .25s;
-    transition: box-shadow .25s, -webkit-box-shadow .25s;
-    border-radius: 2px;
-}
-.card .card-title {
-    font-size: 24px;
-    font-weight: 300;
+#lang_module_wrap{
+    margin-top: 3%;
+    padding: 2%;
+    border-top: 1px solid #cdcdcd;
 }
