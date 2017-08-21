@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+/* colors
+dark: #0A2D49
+light: #6BB8F5
+base blue: #2196f3
+base alt: 1A77C0
+faded blue: #325773
+
+*/
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Robot', sans-serif;
+}
+.container{
+    margin: 0 auto;
+    width: 70%;
+}
+nav {
+  color: #fff;
+  background-color: #2196f3;
+  width: 100%;
+  min-height: 56px;
+  line-height: 56px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14)
+}
+nav a{
+    text-decoration: none;
+}
+nav ul {
+    margin: 0;
+    list-style: none;
+    float: right;
+}
+  
+nav ul li {
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    float: left;
+    padding: 0;
+}
+nav ul li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+  
+nav ul a {
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    font-size: 1em;
+    color: #fff;
+    display: block;
+    padding: 0 15px;
+    cursor: pointer;
+}
+nav .brand_logo {
+    float: left;
+    color: #fff;
+    font-size: 2.1rem;
+    padding: 0;
+}
+#about{
+    background: rgba(0,0,0,.5);
+    z-index: 10;
+}
+#lang_selection{
+    display: flex;
+    justify-content: center;
+}
+.lang_btn{
+    padding: 1% 2%;
+    font-size: 1.25em;
+    color: #fff;
+    background: #325773;
+    margin: 2%;
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14)
+}
+.lang_btn:hover{
+    background: #2196f3;
+}
+#lang_modules{
+    display: none;
+}
+
+.card {
+    position: relative;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+}
+.card .card-title {
+    font-size: 24px;
+    font-weight: 300;
+}

@@ -1,0 +1,33 @@
+<div id="wrap">
+  <nav>
+    <div class="container">
+      <a class="brand_logo" href="/">&lt; FlashCodes /&gt;</a>
+      <ul id="nav-mobile" class="right">
+        <li><a (click)="aboutVisible = true">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="about" class="container" *ngIf="aboutVisible">
+    <div id="about_card" class="card grey">
+      <div class="card-content white-text">
+        <span class="card-title">About FlashCodes</span>
+        <p>I began this project by planning to make physical flash cards to help me learn new programing languages, paradigms,
+          and best practices, but decided that it would make more sense to implement this as a web app. So here it is.</p><br>
+        <button (click)="aboutVisible = false" class="btn blue"><i class="material-icons left">close</i>Close</button>
+      </div>
+    </div>
+  </div>
+  <div id="lang_selection" class="container">
+    <div class="lang_btn">JavaScript</div>
+    <div class="lang_btn">TypeScript</div>
+    <div class="lang_btn">C#</div>
+    <div class="lang_btn">Python</div>
+  </div>
+  <div id="lang_modules">
+    <app-javascript *ngIf="lang == 'js'"></app-javascript>
+    <app-c-sharp *ngIf="lang == 'c#'"></app-c-sharp>
+    <app-python *ngIf="lang == 'py'"></app-python>
+    <app-typescript *ngIf="lang == 'ts'"></app-typescript>
+  </div>
+
+</div>
