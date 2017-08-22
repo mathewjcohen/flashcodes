@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise
 
 module.exports = {
     getJS: function(req, res){
-        Question.find({language: 'javascript'}, function (err, jsFlashCodes) {
+        Question.find({language: 'JavaScript'}, function (err, jsFlashCodes) {
             if (jsFlashCodes) {
                 res.json(jsFlashCodes);
             } else {
