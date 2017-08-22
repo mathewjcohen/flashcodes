@@ -20,6 +20,9 @@ module.exports = function(app){
     app.post('/addFlashCode', function(req, res){
         Question.addFlashCode(req, res);
     })
+    app.post('/deleteFlashCode', function(req, res){
+        Question.deleteFlashCode(req, res);
+    })
     app.all("*", (req, res, next) => {
         res.sendFile(path.resolve("./public/dist/index.html"));
     })

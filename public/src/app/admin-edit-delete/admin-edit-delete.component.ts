@@ -50,8 +50,25 @@ export class AdminEditDeleteComponent implements OnInit {
       .catch(err => { console.log(err); })
   }
 
-  clearForm(){
-    this.flashcode = {language: "JavaScript", question: "", answer: ""};
+  clearForm() {
+    this.flashcode = { language: "JavaScript", question: "", answer: "" };
+  }
+
+  deleteFlashCode(q) {
+    this._db.deleteFlashCode({ question: q })
+      .then(deleted => {
+        if (deleted) {
+          // if success - get new list of flashcodes
+          this._db.allFlashCodes()
+            .then(allFlashCodes => {
+              if (allFlashCodes) {
+                this.allFlashCodes = allFlashCodes;
+              }
+            })
+            .catch(err => { console.log(err); })
+        }
+      })
+      .catch(err => { console.log(err); })
   }
 
 }

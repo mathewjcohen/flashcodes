@@ -22,6 +22,15 @@ module.exports = {
             }
         })
     },
+    deleteFlashCode: function(req, res){
+        Question.remove({question: req.body.question}, function (err, removed) {
+            if (removed) {
+                res.json(removed);
+            } else {
+                console.log('Error getting all jsFlashCodes in event controller...');
+            }
+        })
+    },
     addFlashCode: function(req, res){
         var question = new Question({
             language: req.body.language,

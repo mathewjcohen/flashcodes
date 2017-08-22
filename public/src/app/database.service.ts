@@ -14,6 +14,9 @@ export class DatabaseService {
   allFlashCodes(){
     return this._http.get('/allFlashCodes').map(data => data.json()).toPromise();
   }
+  deleteFlashCode(q){
+    return this._http.post('/deleteFlashCode', q).map(data => data.json()).toPromise();
+  }
   addFlashCode(flashcode){
     return this._http.post('/addFlashCode', flashcode).map(data => data.json()).toPromise();
   }
