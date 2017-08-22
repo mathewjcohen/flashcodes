@@ -10,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class AdminEditDeleteComponent implements OnInit {
 
   allFlashCodes = [];
-  flashcode = new FlashCode;
+  flashcode = {
+    language: "JavaScript",
+    question: "",
+    answer: ""
+  };
 
   constructor(private _db: DatabaseService) {
     this._db.allFlashCodes()
@@ -38,9 +42,16 @@ export class AdminEditDeleteComponent implements OnInit {
               }
             })
             .catch(err => { console.log(err); })
+
+          // clear model & form fields
+          this.clearForm();
         }
       })
       .catch(err => { console.log(err); })
+  }
+
+  clearForm(){
+    this.flashcode = {language: "JavaScript", question: "", answer: ""};
   }
 
 }
