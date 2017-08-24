@@ -13,37 +13,34 @@ export class JavascriptComponent implements OnInit {
 
   constructor(private _db: DatabaseService) {
     this._db.getJS()
-      .then(jsFlashCodes => {
-        if (jsFlashCodes) {
-          let rand = Math.floor(Math.random() * jsFlashCodes.length) + 1;
-          this.jsFlashCodes = jsFlashCodes;
-          this.currentFlashCode = this.jsFlashCodes[rand];
-          this.jsFlashCodes.splice(rand, 1);
-        }
-      })
-      .catch(err => { console.log(err); })
+    .then(jsFlashCodes => {
+      if (jsFlashCodes) {
+        this.jsFlashCodes = jsFlashCodes;
+        var rand = Math.floor(Math.random() * this.jsFlashCodes.length);
+        this.currentFlashCode = this.jsFlashCodes[rand];
+        this.jsFlashCodes.splice(rand, 1);
+      }
+    })
+    .catch(err => { console.log(err); })
   }
 
   ngOnInit() {
-
+    
   }
 
   nextFC() {
-    if (this.jsFlashCodes.length == 1) {
+    if (this.jsFlashCodes.length < 2) {
+      this.currentFlashCode = this.jsFlashCodes[0];
       this.jsFlashCodes = [];
-      this.currentFlashCode = {};
       this._db.getJS()
         .then(jsFlashCodes => {
           if (jsFlashCodes) {
-            let rand = Math.floor(Math.random() * jsFlashCodes.length) + 1;
             this.jsFlashCodes = jsFlashCodes;
-            this.currentFlashCode = this.jsFlashCodes[rand];
-            this.jsFlashCodes.splice(rand, 1);
           }
         })
         .catch(err => { console.log(err); })
     }else{
-      let rand = Math.floor(Math.random() * this.jsFlashCodes.length) + 1;
+      var rand = Math.floor(Math.random() * this.jsFlashCodes.length);
       this.currentFlashCode = this.jsFlashCodes[rand];
       this.jsFlashCodes.splice(rand, 1);
     }

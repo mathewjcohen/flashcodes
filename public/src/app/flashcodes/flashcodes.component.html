@@ -1,3 +1,17 @@
+<div id="about_wrapper" *ngIf="aboutVisible" [@aboutWrapper]>
+  <div id="about" class="container" [@aboutAnim]>
+    <div id="about_card" class="card grey">
+      <div class="card-content white-text">
+        <span class="card-title">About FlashCodes</span>
+        <p>I began this project by planning to make physical flash cards to assist in the learning of new programing languages,
+          paradigms, and best practices, but decided that it would make more sense to implement this as a web app. So here
+          it is. Enjoy!</p>
+        <button (click)="aboutVisible = false" class="btn btn_floating faded_blue"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="wrap">
   <nav>
     <div class="container">
@@ -7,17 +21,6 @@
       </ul>
     </div>
   </nav>
-  <div id="about" class="container" *ngIf="aboutVisible">
-    <div id="about_card" class="card grey">
-      <div class="card-content white-text">
-        <span class="card-title">About FlashCodes</span>
-        <p>I began this project by planning to make physical flash cards to assist in the learning of new programing languages,
-          paradigms, and best practices, but decided that it would make more sense to implement this as a web app. So here
-          it is.</p>
-        <button (click)="aboutVisible = false" class="btn btn_floating faded_blue"><i class="fa fa-times" aria-hidden="true"></i></button>
-      </div>
-    </div>
-  </div>
   <div id="lang_selection" class="container">
     <div class="btn blue" (click)="switchLang('js')">JavaScript</div>
     <div class="btn blue" (click)="switchLang('ts')">TypeScript</div>

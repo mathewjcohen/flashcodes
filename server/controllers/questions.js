@@ -13,6 +13,15 @@ module.exports = {
             }
         })
     },
+    getTS: function(req, res){
+        Question.find({language: 'TypeScript'}, function (err, tsFlashCodes) {
+            if (tsFlashCodes) {
+                res.json(tsFlashCodes);
+            } else {
+                console.log('Error getting all tsFlashCodes in event controller...');
+            }
+        })
+    },
     allFlashCodes: function(req, res){
         Question.find({}, function (err, allFlashCodes) {
             if (allFlashCodes) {

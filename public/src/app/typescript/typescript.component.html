@@ -1,1 +1,19 @@
-<h1>TypeScript FlashCodes Coming Soon!</h1>
+<h1>TypeScript</h1>
+<h5>(More FlashCodes Coming Soon!)</h5>
+
+<div class="wrapper">
+  <div class="front" ontouchstart="this.classList.toggle('hover');">
+    <div class="inner">
+      <span>{{ currentFlashCode.question }}</span>
+    </div>
+  </div>
+  <div class="back" ontouchstart="this.classList.toggle('hover');">
+    <div class="inner">
+      <p>{{ currentFlashCode.answer }}</p>
+    </div>
+  </div>
+</div>
+
+<div id="next_wrapper">
+  <div class="btn blue" (click)="nextFC()">&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;</div>
+</div>

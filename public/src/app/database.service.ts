@@ -11,6 +11,9 @@ export class DatabaseService {
   getJS(){
     return this._http.get('/getJS').map(data => data.json()).toPromise();
   }
+  getTS(){
+    return this._http.get('/getTS').map(data => data.json()).toPromise();
+  }
   allFlashCodes(){
     return this._http.get('/allFlashCodes').map(data => data.json()).toPromise();
   }
