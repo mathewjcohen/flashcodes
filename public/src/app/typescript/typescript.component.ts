@@ -12,7 +12,7 @@ export class TypescriptComponent implements OnInit {
   currentFlashCode = {};
 
   constructor(private _db: DatabaseService) {
-    this._db.getJS()
+    this._db.getTS()
     .then(tsFlashCodes => {
       if (tsFlashCodes) {
         this.tsFlashCodes = tsFlashCodes;
@@ -32,7 +32,7 @@ export class TypescriptComponent implements OnInit {
     if (this.tsFlashCodes.length < 2) {
       this.currentFlashCode = this.tsFlashCodes[0];
       this.tsFlashCodes = [];
-      this._db.getJS()
+      this._db.getTS()
         .then(tsFlashCodes => {
           if (tsFlashCodes) {
             this.tsFlashCodes = tsFlashCodes;
