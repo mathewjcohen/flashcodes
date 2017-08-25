@@ -162,3 +162,15 @@ h5{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
+
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        width: 90%;
+    }
+    .front,
+    .back{
+        min-height: 320px;
+        font-size: 1.25rem;
+    }
+}

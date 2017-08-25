@@ -440,3 +440,64 @@ nav .brand_logo {
     padding: 2%;
     border-top: 1px solid #cdcdcd;
 }
+
+
+@media screen and (max-width: 1024px) {
+    nav {
+        display: block;
+        color: #fff;
+        background-color: #2196f3;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        min-height: 65px;
+        line-height: 65px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14)
+    }
+    nav ul a {
+        font-size: 1.5rem;
+    }
+    .container{
+        width: 95%;
+    }
+    #lang_selection{
+        display: flex;
+        width: 75%;
+        justify-content: space-between;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    nav .brand_logo {
+        float: none;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    nav ul {
+        display: none;
+    }
+    nav .brand_logo {
+        font-size: 1.75rem;
+    }
+    #lang_selection{
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    nav .brand_logo {
+        font-size: 1.5rem;
+    }
+    #lang_selection{
+        display: flex;
+        width: 99%;
+        justify-content: space-between;
+        margin-top: 2%;
+    }
+}

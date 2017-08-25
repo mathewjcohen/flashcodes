@@ -13,3 +13,16 @@
     margin-top: 5%;
     z-index: 101;
 }
+
+h1{
+    text-align: center;
+    color: #7a7a7a;
+}
+
+@media screen and (max-width: 1024px) {
+    #about{
+        width: 80%;
+        margin-top: 25%;
+        z-index: 101;
+    }
+}
