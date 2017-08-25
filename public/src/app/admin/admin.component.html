@@ -1,0 +1,18 @@
+<div id="wrap">
+  <nav>
+    <div class="container">
+      <a class="brand_logo" href="/">&lt; FlashCodes /&gt;</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Login</h2>
+    <div class="error" *ngIf="error">
+      {{ error }}
+    </div>
+    <form class="add_flash_form" (submit)="userLogin()">
+      <input type="text" name="login" required minlength="5" [(ngModel)]="user.login" #login="ngModel" placeholder="login">
+      <input type="password" name="pass" required minlength="8" [(ngModel)]="user.pass" #pass="ngModel" placeholder="pass">
+      <button class="btn blue" type="submit">Login</button>
+    </form>
+  </div>
+</div>

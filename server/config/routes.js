@@ -1,6 +1,7 @@
 // this snippet should be in: >ProjectDir/server/config/routes.js
 const path = require("path");
 var Question = require('../controllers/questions.js');
+var User = require('../controllers/users.js');
 module.exports = function(app){
     app.get('/getJS', function(req, res){
         Question.getJS(req, res);
@@ -22,6 +23,15 @@ module.exports = function(app){
     })
     app.post('/deleteFlashCode', function(req, res){
         Question.deleteFlashCode(req, res);
+    })
+    app.post('/login', function(req, res){
+        User.login(req, res);
+    })
+    app.get('/checkLogin', function(req, res){
+        User.checkLogin(req, res);
+    })
+    app.get('/logout', function(req, res){
+        User.logout(req, res);
     })
     app.all("*", (req, res, next) => {
         res.sendFile(path.resolve("./public/dist/index.html"));

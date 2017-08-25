@@ -1,6 +1,7 @@
 import { FlashCode } from './../flashcode';
 import { DatabaseService } from './../database.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin-edit-delete',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminEditDeleteComponent implements OnInit {
 
+  isLoggedIn = false;
   allFlashCodes = [];
   flashcode = {
     language: "JavaScript",
@@ -16,7 +18,18 @@ export class AdminEditDeleteComponent implements OnInit {
     answer: ""
   };
 
-  constructor(private _db: DatabaseService) {
+  constructor(private _db: DatabaseService, private router: Router) {
+    // check logged in status
+    this._db.checkLogin()
+      .then(status => {
+        if (status.loggedIn === true) {
+          this.isLoggedIn = true;
+        }else{
+          this.isLoggedIn = false;
+          this.router.navigate(['/login']);
+        }
+      }).catch(err => { console.log(err); })
+
     this._db.allFlashCodes()
       .then(allFlashCodes => {
         if (allFlashCodes) {

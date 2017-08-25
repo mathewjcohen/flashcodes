@@ -8,6 +8,16 @@ export class DatabaseService {
 
   constructor(private _http: Http) { }
 
+  checkLogin(){
+    console.log("inside service")
+    return this._http.get('/checkLogin').map(data => data.json()).toPromise();
+  }
+  login(user){
+    return this._http.post('/login', user).map(data => data.json()).toPromise();
+  }
+  logout(){
+    return this._http.get('/logout').map(data => data.json()).toPromise();
+  }
   getJS(){
     return this._http.get('/getJS').map(data => data.json()).toPromise();
   }

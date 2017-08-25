@@ -1,8 +1,11 @@
 // this snippet should be in: >ProjectDir/server.js
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
+
+app.use(session({secret: "thisisasecret", resave: false, saveUninitialized: true}));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json()); // for sending json

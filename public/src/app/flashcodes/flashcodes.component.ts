@@ -21,11 +21,11 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
       'aboutAnim', [
       transition(':enter', [
         style({transform: 'translateY(-300px)', opacity: 0}),
-        animate('500ms ease-in', style({transform: 'translateY(0)', opacity: 1}))
+        animate('600ms ease-in', style({transform: 'translateY(0)', opacity: 1}))
       ]),
       transition(':leave', [
         style({transform: 'translateY(0)', opacity: 1}),
-        animate('500ms ease-out', style({transform: 'translateY(-300px)', opacity: 0}))
+        animate('100ms ease-in', style({transform: 'translateY(-300px)', opacity: 0}))
       ])
     ])
   ]
